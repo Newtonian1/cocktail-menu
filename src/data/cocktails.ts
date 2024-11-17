@@ -8,7 +8,7 @@ export const cocktails: Cocktail[] = [
     {
         name: "Old Fashioned",
         ingredients: ["bourbon", "angostura", "simple"],
-        image: "../images/react.svg"
+        image: "./../images/old_fashioned.JPEG"
     },
     {
         name: "Boulevardier",
