@@ -1,3 +1,10 @@
 .cocktail-card {
-    border: 2px solid navy
+    color: rgb(228, 225, 225);
+    border: 2px solid rgb(173, 173, 173);
+    border-radius: 5px;
+    margin: 20px;
+}
+
+li {
+    list-style-type: none;
 }
