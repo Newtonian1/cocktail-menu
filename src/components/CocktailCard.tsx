@@ -8,7 +8,7 @@ interface CocktailCardProps {
 const CocktailCard: React.FC<CocktailCardProps> = ({cocktail}) => {
     return (
         <div className="cocktail-card">
-            <h3>{cocktail.name}</h3>
+            <h3 className="cocktail-name">{cocktail.name}</h3>
             <ul>
                 {cocktail.ingredients.map(i => <li>{i}</li>)}
             </ul>

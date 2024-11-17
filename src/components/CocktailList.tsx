@@ -8,11 +8,16 @@ import { SearchType } from "../data/search"
 interface CocktailListProps {
     search: string
     searchType: SearchType
+    random: boolean
 }
 
-const CocktailList: React.FC<CocktailListProps> = ({search, searchType}) => {
-    
-    const filteredCocktails = useMemo(() => {
+const CocktailList: React.FC<CocktailListProps> = ({search, searchType, random}) => {
+
+    const renderCocktails = useMemo(() => {
+        if (random) {
+            const randomIndex = Math.floor(Math.random() * cocktails.length);
+            return [cocktails[randomIndex]];
+        }
         switch (searchType) {
             case SearchType.Name:
                 return cocktails.filter((cocktail) => {
@@ -26,11 +31,11 @@ const CocktailList: React.FC<CocktailListProps> = ({search, searchType}) => {
                     })
                 });
         }
-    }, [search, searchType])
+    }, [search, searchType, random])
 
     return (
         <div className="cocktail-list">
-            {filteredCocktails.map((c: Cocktail) => <CocktailCard cocktail={c}/>)}
+            {renderCocktails.map((c: Cocktail) => <CocktailCard cocktail={c}/>)}
         </div>
     )
 }

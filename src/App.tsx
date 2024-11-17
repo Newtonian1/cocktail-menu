@@ -13,10 +13,15 @@ const theme = createTheme({
 function App() {
   const [search, setSearch] = useState<string>("");
   const [searchType, setSearchType] = useState<SearchType>(SearchType.Name);
+  const [random, setRandom] = useState<boolean>(false);
 
   return (
     <ThemeProvider theme={theme}>
-      <h1></h1>
+      <h2
+        onClick={() => { setRandom(!random) }}
+      >
+        It's 10 AM somewhere
+      </h2>
 
       <div id="search-bar">
         <TextField
@@ -36,7 +41,7 @@ function App() {
         </Select>
       </div>
 
-      <CocktailList search={search} searchType={searchType}/>
+      <CocktailList search={search} searchType={searchType} random={random}/>
     </ThemeProvider>
   )
 }

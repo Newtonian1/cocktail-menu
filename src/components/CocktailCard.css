@@ -1,8 +1,20 @@
 .cocktail-card {
     color: rgb(228, 225, 225);
-    border: 2px solid rgb(173, 173, 173);
+    background-color: #1d1d1d;
+    padding: 5px;
     border-radius: 5px;
-    margin: 20px;
+    margin-top: 20px;
+}
+
+.cocktail-name {
+    margin: 5px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 5px 0;
+    padding: 0;
 }
 
 li {
