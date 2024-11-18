@@ -17,31 +17,33 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <h2
-        onClick={() => { setRandom(!random) }}
-      >
-        It's 10 AM somewhere
-      </h2>
-
-      <div id="search-bar">
-        <TextField
-          id="search-value-text-field"
-          label="Search"
-          variant="outlined"
-          onChange={(event) => {setSearch(event.target.value.toLowerCase())}}
-        />
-        <Select
-          id="search-type-select"
-          variant="outlined"
-          value={searchType}
-          onChange={(event) => {setSearchType(event.target.value as SearchType)}}
+      <div id="root">
+        <h2
+          onClick={() => { setRandom(!random) }}
         >
-          <MenuItem value={SearchType.Name}>Cocktail</MenuItem>
-          <MenuItem value={SearchType.Ingredient}>Ingredient</MenuItem>
-        </Select>
-      </div>
+          It's 10 AM somewhere
+        </h2>
 
-      <CocktailList search={search} searchType={searchType} random={random}/>
+        <div id="search-bar">
+          <TextField
+            id="search-value-text-field"
+            label="Search"
+            variant="outlined"
+            onChange={(event) => {setSearch(event.target.value.toLowerCase())}}
+          />
+          <Select
+            id="search-type-select"
+            variant="outlined"
+            value={searchType}
+            onChange={(event) => {setSearchType(event.target.value as SearchType)}}
+          >
+            <MenuItem value={SearchType.Name}>Cocktail</MenuItem>
+            <MenuItem value={SearchType.Ingredient}>Ingredient</MenuItem>
+          </Select>
+        </div>
+
+        <CocktailList search={search} searchType={searchType} random={random}/>
+      </div>
     </ThemeProvider>
   )
 }

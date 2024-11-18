@@ -10,22 +10,14 @@ const CocktailCard: React.FC<CocktailCardProps> = ({cocktail}) => {
     const [showImage, setShowImage] = useState<boolean>(false);
 
     const renderCardDetails = useMemo(() => {
-        if (showImage) {
-            const imgUrl = "./images/" + cocktail.image + ".JPEG";
-            return (
-                <div>
-                    <img src={imgUrl} alt={cocktail.name} />
-                </div>
-            )
-        }
-
         return (
             <div>
                 <h3 className="cocktail-name">{cocktail.name}</h3>
                 <ul>
                     {cocktail.ingredients.map(i => <li>{i}</li>)}
                 </ul>
-            </div>
+                {showImage && <img src={"./images/" + cocktail.image + ".JPEG"} alt={cocktail.name} />}
+            </div> 
         )
     }, [showImage, cocktail]);
 
