@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import type { Cocktail } from "../data/cocktails";
 import "./CocktailCard.css"
+import { ArrowDropDown } from '@mui/icons-material';
 
 interface CocktailCardProps {
     cocktail: Cocktail
@@ -16,7 +17,7 @@ const CocktailCard: React.FC<CocktailCardProps> = ({cocktail}) => {
                 <ul>
                     {cocktail.ingredients.map(i => <li>{i}</li>)}
                 </ul>
-                {showImage && <img src={"./images/" + cocktail.image + ".JPEG"} alt={cocktail.name} />}
+                {showImage ? <img src={"./images/" + cocktail.image + ".JPEG"} alt={cocktail.name} /> : <ArrowDropDown/>}
             </div> 
         )
     }, [showImage, cocktail]);
