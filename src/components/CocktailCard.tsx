@@ -11,7 +11,7 @@ const CocktailCard: React.FC<CocktailCardProps> = ({cocktail}) => {
 
     const renderCardDetails = useMemo(() => {
         if (showImage) {
-            const imgUrl = "/images/" + cocktail.image + ".JPEG"
+            const imgUrl = "./images/" + cocktail.image + ".JPEG";
             return (
                 <div>
                     <img src={imgUrl} alt={cocktail.name} />
