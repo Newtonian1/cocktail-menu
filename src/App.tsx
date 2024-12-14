@@ -18,11 +18,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div id="root">
-        <h2
+        <img
           onClick={() => { setRandom(!random) }}
-        >
-          It's 10 AM somewhere
-        </h2>
+          src="./images/10_am_logo.png"
+          alt="10 am logo"
+        />
 
         <div id="search-bar">
           <TextField
