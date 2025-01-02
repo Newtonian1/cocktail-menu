@@ -19,7 +19,10 @@ function App() {
     <ThemeProvider theme={theme}>
       <div id="root">
         <img
-          onClick={() => { setRandom(!random) }}
+          onClick={() => { 
+            setSearch("");
+            setRandom(!random); 
+          }}
           src="./images/10_am_logo.png"
           alt="10 am logo"
         />
@@ -29,7 +32,11 @@ function App() {
             id="search-value-text-field"
             label="Search"
             variant="outlined"
-            onChange={(event) => {setSearch(event.target.value.toLowerCase())}}
+            value={search}
+            onChange={(event) => {
+              setRandom(false);
+              setSearch(event.target.value.toLowerCase())
+            }}
           />
           <Select
             id="search-type-select"
